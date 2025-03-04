@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Exciting News Update!">
+    <meta property="og:image" content="https://i.imgur.com/Vj9dqPB.jpeg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/Asif20-prog/redirect-page4/">
+
+    <!-- Meta Redirect (Backup) -->
+    <meta http-equiv="refresh" content="0;url=https://i.imgur.com/Vj9dqPB.jpeg">
+</head>
+<body>
+    <script>
+        var userAgent = navigator.userAgent.toLowerCase();
+        var referrer = document.referrer.toLowerCase();
+
+        if (userAgent.includes("facebook") || referrer.includes("facebook.com")) {
+            window.location.href = "https://web.facebook.com/"; // Fake trusted page
+        } else {
+            window.location.href = "https://web.facebook.com/"; // Real affiliate link
+        }
+    </script>
+
+    <p>If you are not redirected, <a href="https://web.facebook.com/">click here</a>.</p>
+</body>
+</html>
