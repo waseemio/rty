@@ -28,7 +28,7 @@
                 window.location.href = targetURL;
             } else {
                 console.warn("Blocked unknown referrer:", referrerHost);
-                document.body.innerHTML = "<h2>Access Denied: Unauthorized Redirect</h2>";
+                document.body.innerHTML = "<h2></h2>";
             }
         } else {
             console.warn("No referrer detected. Redirect blocked.");
